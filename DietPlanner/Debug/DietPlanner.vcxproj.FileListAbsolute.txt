@@ -1,0 +1,4 @@
+C:\Users\micha\source\repos\MicRym\Diet-Calories-Workout-Helper\DietPlanner\Debug\DietPlanner.vcxproj.AssemblyReference.cache
+C:\Users\micha\source\repos\MicRym\Diet-Calories-Workout-Helper\DietPlanner\Debug\DietPlanner.exe
+C:\Users\micha\source\repos\MicRym\Diet-Calories-Workout-Helper\DietPlanner\Debug\DietPlanner.DietPlanner.resources
+C:\Users\micha\source\repos\MicRym\Diet-Calories-Workout-Helper\DietPlanner\Debug\DietPlanner.vcxproj.GenerateResource.cache
