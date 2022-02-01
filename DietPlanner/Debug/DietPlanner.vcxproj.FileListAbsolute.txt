@@ -2,3 +2,16 @@ C:\Users\micha\source\repos\MicRym\Diet-Calories-Workout-Helper\DietPlanner\Debu
 C:\Users\micha\source\repos\MicRym\Diet-Calories-Workout-Helper\DietPlanner\Debug\DietPlanner.exe
 C:\Users\micha\source\repos\MicRym\Diet-Calories-Workout-Helper\DietPlanner\Debug\DietPlanner.DietPlanner.resources
 C:\Users\micha\source\repos\MicRym\Diet-Calories-Workout-Helper\DietPlanner\Debug\DietPlanner.vcxproj.GenerateResource.cache
+C:\Users\micha\source\repos\MicRym\Diet-Calories-Workout-Helper\DietPlanner\Debug\DietPlanner.exe.config
+C:\Users\micha\source\repos\MicRym\Diet-Calories-Workout-Helper\DietPlanner\Debug\MySql.Data.dll
+C:\Users\micha\source\repos\MicRym\Diet-Calories-Workout-Helper\DietPlanner\Debug\Google.Protobuf.dll
+C:\Users\micha\source\repos\MicRym\Diet-Calories-Workout-Helper\DietPlanner\Debug\ZstdNet.dll
+C:\Users\micha\source\repos\MicRym\Diet-Calories-Workout-Helper\DietPlanner\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\micha\source\repos\MicRym\Diet-Calories-Workout-Helper\DietPlanner\Debug\BouncyCastle.Crypto.dll
+C:\Users\micha\source\repos\MicRym\Diet-Calories-Workout-Helper\DietPlanner\Debug\Ubiety.Dns.Core.dll
+C:\Users\micha\source\repos\MicRym\Diet-Calories-Workout-Helper\DietPlanner\Debug\System.Memory.dll
+C:\Users\micha\source\repos\MicRym\Diet-Calories-Workout-Helper\DietPlanner\Debug\System.Buffers.dll
+C:\Users\micha\source\repos\MicRym\Diet-Calories-Workout-Helper\DietPlanner\Debug\K4os.Compression.LZ4.dll
+C:\Users\micha\source\repos\MicRym\Diet-Calories-Workout-Helper\DietPlanner\Debug\K4os.Hash.xxHash.dll
+C:\Users\micha\source\repos\MicRym\Diet-Calories-Workout-Helper\DietPlanner\Debug\System.Numerics.Vectors.dll
+C:\Users\micha\source\repos\MicRym\Diet-Calories-Workout-Helper\DietPlanner\Debug\MySql.Data.xml
