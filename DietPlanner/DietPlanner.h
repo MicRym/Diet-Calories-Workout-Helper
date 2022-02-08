@@ -1,5 +1,5 @@
 #pragma once
-
+#include "CRecipie.h";
 namespace DietPlanner {
 
 	using namespace System;
@@ -37,6 +37,7 @@ namespace DietPlanner {
 		}
 	
 	private:
+		CRecipie m_oCRecipie;
 		String^ oConnectionString;
 		MySqlConnection^ oConnectMySqlConnection;
 		bool bSQLSucces = false;
@@ -598,10 +599,17 @@ private: System::Void OnConnectionButtonClick(System::Object^ sender, System::Ev
 }
 private: System::Void BTN_SEND_Click(System::Object^ sender, System::EventArgs^ e) 
 {
+	m_oCRecipie.SetNameString(TXT_RECEPIE_NAME->Text);
+	m_oCRecipie.SetDescriptionString(TXT_DESCRIPTION->Text);
+	m_oCRecipie.SetCarbs((TXT_CARBS->Text));
+	m_oCRecipie.SetFats((TXT_FATS->Text));
+	m_oCRecipie.SetProteins((TXT_PROTEINS->Text));
+	m_oCRecipie.CalculateCalories();
+	
 	try
 	{
-		MySqlCommand oAddMySqlCommand(L"insert into dietplanner.recipie_table (name, disscription, macro_protein, macro_carbs, macro_fats) values ('" + TXT_RECEPIE_NAME->Text
-			+ "', '" + TXT_DESCRIPTION->Text + "', '" + TXT_PROTEINS->Text + "', '" + TXT_CARBS->Text + "', '" + TXT_FATS->Text + "')", oConnectMySqlConnection);
+		MySqlCommand oAddMySqlCommand(L"insert into dietplanner.recipie_table (name, disscription, macro_protein, macro_carbs, macro_fats) values ('" + m_oCRecipie.GetNameString()
+			+ "', '" + m_oCRecipie.GetDescriptionString() + "', '" + m_oCRecipie.GetProteinsString() + "', '" + m_oCRecipie.GetCarbsString() + "', '" + m_oCRecipie.GetFatsString() + "')", oConnectMySqlConnection);
 		oAddMySqlCommand.ExecuteReader();
 	}
 	catch (Exception^ oException)

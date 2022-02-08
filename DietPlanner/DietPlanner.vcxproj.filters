@@ -21,6 +21,9 @@
     <ClInclude Include="DietPlanner.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CRecipie.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="DietPlanner.rc">
@@ -30,6 +33,9 @@
   <ItemGroup>
     <ClCompile Include="DietPlanner.cpp">
       <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CRecipie.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

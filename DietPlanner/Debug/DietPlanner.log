@@ -1,3 +1,6 @@
-﻿  DietPlanner.cpp
-  DietPlanner.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
+﻿  CRecipie.cpp
+  DietPlanner.cpp
+C:\Users\micha\source\repos\MicRym\Diet-Calories-Workout-Helper\DietPlanner\DietPlanner.h(2,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  Generating Code...
+  CRecipie.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
   DietPlanner.vcxproj -> C:\Users\micha\source\repos\MicRym\Diet-Calories-Workout-Helper\DietPlanner\Debug\DietPlanner.exe

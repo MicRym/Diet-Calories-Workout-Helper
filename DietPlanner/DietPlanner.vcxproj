@@ -113,6 +113,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="CRecipie.h" />
     <ClInclude Include="DietPlanner.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -130,6 +131,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CRecipie.cpp" />
     <ClCompile Include="DietPlanner.cpp" />
   </ItemGroup>
   <ItemGroup>
