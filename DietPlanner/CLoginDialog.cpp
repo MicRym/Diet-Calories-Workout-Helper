@@ -46,7 +46,7 @@ void CLoginDialog::OnBnClickedOk()
 	CT2A pszConvertedPasswordString(m_oPasswordString);
 	m_poDBConnector->ChangeUser(SQLString(pszConvertedLoginString), SQLString(pszConvertedPasswordString));
 	m_poDBConnector->ChangeDB("dietplanner");
-	CStringA ErrorMSG =  m_poDBConnector->ConnectToDatabase();
+	CString ErrorMSG =  m_poDBConnector->ConnectToDatabase();
 	if (ErrorMSG == "Sukces")
 	{
 		AfxMessageBox((CString)ErrorMSG);

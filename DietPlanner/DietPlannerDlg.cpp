@@ -161,7 +161,7 @@ void CDietPlannerDlg::OnBnClickedLoginBtn()
 	if (m_oLoginDialog.DoModal() == IDOK)
 	{
 		m_oConnectionFlag = "Connected";
-		AfxMessageBox(m_oCDBConnector.SelectFromTabel());
+		AfxMessageBox(m_oCDBConnector.SelectFromTable());
 		UpdateData(FALSE);
 	}
 	// TODO: Add your control notification handler code here

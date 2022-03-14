@@ -9,10 +9,11 @@ using namespace sql;
 class CDBConnector
 {
 public:
+	~CDBConnector();
 	CDBConnector();
 	CDBConnector(SQLString oUserNameString, SQLString oPasswordString, SQLString oDBNameString);
-	CStringA ConnectToDatabase();
-	CString SelectFromTabel();
+	CString ConnectToDatabase();
+	CString SelectFromTable();
 	void ChangeDB(SQLString oDBNameString);
 	void ChangeUser(SQLString oUserNameString, SQLString oPasswordString);
 	void ChangeURI(SQLString oURIString);
@@ -24,9 +25,12 @@ private:
 	SQLString m_oDBNameString;
 	SQLString m_oURIString;
 	Driver *m_poDBDriver;
+	Connection* ConnectiontoDB();
 	const SQLString m_oDefaultURIString = "tcp://127.0.0.1";
 	const SQLString m_oDefaultUserString = "root";
 	const SQLString m_oDefaultPasswordString = "";
 	const SQLString m_oDefaultDBNameString = "test";
+	const CString SeparatorText = _T(";");
+	
 };
 
