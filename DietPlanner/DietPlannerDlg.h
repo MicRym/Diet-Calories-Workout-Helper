@@ -36,4 +36,21 @@ protected:
 	DECLARE_MESSAGE_MAP()
 public:
 	afx_msg void OnBnClickedLoginBtn();
+	afx_msg void OnBnClickedCaloriesRadio();
+	afx_msg void OnBnClickedMacroRadio();
+	
+private:
+	CString m_oGroupTextString;
+	CEdit m_oProteinsControl;
+	CEdit m_oFatsControl;
+	CEdit m_oCarbsControl;
+	CEdit m_oTotalCalories;
+private:
+	double m_dProteins;
+	double m_dFats;
+	double m_dCarbs;
+	double m_dTotalCalories;
+	void MacroEditDisable(bool bDisable);
+
+	int m_iOption;
 };
