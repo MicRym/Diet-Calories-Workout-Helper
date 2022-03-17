@@ -5,6 +5,7 @@
 #pragma once
 #include "CLoginDialog.h"
 #include "CDBConnector.h"
+#include "CRecipie.h"
 // CDietPlannerDlg dialog
 class CDietPlannerDlg : public CDialogEx
 {
@@ -45,6 +46,7 @@ private:
 	CEdit m_oFatsControl;
 	CEdit m_oCarbsControl;
 	CEdit m_oTotalCalories;
+	CRecipie m_oRecipie;
 private:
 	double m_dProteins;
 	double m_dFats;
@@ -53,4 +55,15 @@ private:
 	void MacroEditDisable(bool bDisable);
 
 	int m_iOption;
+public:
+	afx_msg void OnEnChangeProteinsEdit();
+	afx_msg void OnEnChangeFatsEdit();
+	afx_msg void OnEnChangeCarbsEdit();
+	afx_msg void OnEnChangeTotalCalories();
+	afx_msg void OnBnClickedSaveBtn();
+private:
+	CEdit m_oRecipieEdit;
+public:
+	CString m_oRecipieNameString;
+	afx_msg void OnEnChangeRecipieEdit();
 };

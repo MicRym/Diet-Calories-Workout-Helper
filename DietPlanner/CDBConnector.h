@@ -1,4 +1,5 @@
 #pragma once
+#include "CRecipie.h"
 #include <cppconn/sqlstring.h>
 #include <cppconn/driver.h>
 #include <cppconn/exception.h>
@@ -14,6 +15,7 @@ public:
 	CDBConnector(SQLString oUserNameString, SQLString oPasswordString, SQLString oDBNameString);
 	CString ConnectToDatabase();
 	CString SelectFromTable();
+	CString InsertIntoTable(CRecipie *oRecipie);
 	void ChangeDB(SQLString oDBNameString);
 	void ChangeUser(SQLString oUserNameString, SQLString oPasswordString);
 	void ChangeURI(SQLString oURIString);

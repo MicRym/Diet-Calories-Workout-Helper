@@ -189,7 +189,7 @@
   <ItemGroup>
     <ClInclude Include="CDBConnector.h" />
     <ClInclude Include="CLoginDialog.h" />
-    <ClInclude Include="D:\OneDrive\Dokumenty\CRecipie.h" />
+    <ClInclude Include="CRecipie.h" />
     <ClInclude Include="DietPlanner.h" />
     <ClInclude Include="DietPlannerDlg.h" />
     <ClInclude Include="framework.h" />
@@ -200,7 +200,7 @@
   <ItemGroup>
     <ClCompile Include="CDBConnector.cpp" />
     <ClCompile Include="CLoginDialog.cpp" />
-    <ClCompile Include="D:\OneDrive\Dokumenty\CRecipie.cpp" />
+    <ClCompile Include="CRecipie.cpp" />
     <ClCompile Include="DietPlanner.cpp" />
     <ClCompile Include="DietPlannerDlg.cpp" />
     <ClCompile Include="pch.cpp">

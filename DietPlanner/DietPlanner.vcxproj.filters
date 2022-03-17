@@ -33,13 +33,13 @@
     <ClInclude Include="pch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="D:\OneDrive\Dokumenty\CRecipie.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="CDBConnector.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CLoginDialog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CRecipie.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -53,13 +53,13 @@
     <ClCompile Include="pch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\OneDrive\Dokumenty\CRecipie.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="CDBConnector.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CLoginDialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CRecipie.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

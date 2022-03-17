@@ -1,6 +1,6 @@
 #include "pch.h"
 #include "CDBConnector.h"
-
+#include "CRecipie.h"
 using namespace sql;
 
 CDBConnector::~CDBConnector()
@@ -76,10 +76,38 @@ CString CDBConnector::SelectFromTable()
 	catch (SQLException& e)
 	{
 		oResultString = e.what();
-		bConnectionFlag = false;
 	}
 	return oResultString;
 }
+
+CString CDBConnector::InsertIntoTable(CRecipie* oRecipie)
+{
+	CString oResultString;
+	CString oQuerryString = _T("INSERT into dietplanner.recipie_table(name , disscription, macro_protein,macro_carbs, macro_fats, prep_time) ");
+	CString oQuerryValuesString; 
+	oQuerryValuesString.Format(_T("VALUES ('%s', '%s', %f, %f, %f, %f)"),
+					oRecipie->GetNameString(), 
+					oRecipie->GetDescriptionString(),
+					oRecipie->GetProteins(), 
+					oRecipie->GetCarbs(),
+					oRecipie->GetFats(),
+					30);
+	oQuerryString += oQuerryValuesString;
+	CT2CA oSQLQuerryString(oQuerryString);
+	try
+	{
+		Connection* oConnection = ConnectiontoDB();
+		Statement* oStatment(oConnection->createStatement());
+		oStatment->execute((SQLString)oSQLQuerryString);
+
+	}
+	catch (SQLException& e)
+	{
+		oResultString = e.what();
+	}
+	return oResultString;
+}
+
 
 void CDBConnector::ChangeDB(SQLString oDBNameString)
 {

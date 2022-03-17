@@ -56,6 +56,7 @@ CDietPlannerDlg::CDietPlannerDlg(CWnd* pParent /*=nullptr*/)
 	, m_dCarbs(0)
 	, m_dTotalCalories(0)
 	, m_iOption(0)
+	, m_oRecipieNameString(_T(""))
 {
 	m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
 }
@@ -78,6 +79,8 @@ void CDietPlannerDlg::DoDataExchange(CDataExchange* pDX)
 	DDV_MinMaxDouble(pDX, m_dTotalCalories, 0, DBL_MAX);
 	DDX_Radio(pDX, IDC_CALORIES_RADIO, m_iOption);
 	DDV_MinMaxInt(pDX, m_iOption, -1, 1);
+	DDX_Control(pDX, IDC_RECIPIE_EDIT, m_oRecipieEdit);
+	DDX_Text(pDX, IDC_RECIPIE_EDIT, m_oRecipieNameString);
 }
 
 BEGIN_MESSAGE_MAP(CDietPlannerDlg, CDialogEx)
@@ -87,6 +90,12 @@ BEGIN_MESSAGE_MAP(CDietPlannerDlg, CDialogEx)
 	ON_BN_CLICKED(IDC_LOGIN_BTN, &CDietPlannerDlg::OnBnClickedLoginBtn)
 	ON_BN_CLICKED(IDC_CALORIES_RADIO, &CDietPlannerDlg::OnBnClickedCaloriesRadio)
 	ON_BN_CLICKED(IDC_MACRO_RADIO, &CDietPlannerDlg::OnBnClickedMacroRadio)
+	ON_EN_CHANGE(IDC_PROTEINS_EDIT, &CDietPlannerDlg::OnEnChangeProteinsEdit)
+	ON_EN_CHANGE(IDC_FATS_EDIT, &CDietPlannerDlg::OnEnChangeFatsEdit)
+	ON_EN_CHANGE(IDC_CARBS_EDIT, &CDietPlannerDlg::OnEnChangeCarbsEdit)
+	ON_EN_CHANGE(IDC_TOTAL_CALORIES, &CDietPlannerDlg::OnEnChangeTotalCalories)
+	ON_BN_CLICKED(IDC_SAVE_BTN, &CDietPlannerDlg::OnBnClickedSaveBtn)
+	ON_EN_CHANGE(IDC_RECIPIE_EDIT, &CDietPlannerDlg::OnEnChangeRecipieEdit)
 END_MESSAGE_MAP()
 
 
@@ -137,11 +146,6 @@ void CDietPlannerDlg::OnSysCommand(UINT nID, LPARAM lParam)
 		CDialogEx::OnSysCommand(nID, lParam);
 	}
 }
-
-// If you add a minimize button to your dialog, you will need the code below
-//  to draw the icon.  For MFC applications using the document/view model,
-//  this is automatically done for you by the framework.
-
 void CDietPlannerDlg::OnPaint()
 {
 	if (IsIconic())
@@ -173,9 +177,6 @@ HCURSOR CDietPlannerDlg::OnQueryDragIcon()
 {
 	return static_cast<HCURSOR>(m_hIcon);
 }
-
-
-
 void CDietPlannerDlg::OnBnClickedLoginBtn()
 {
 	m_oLoginDialog.SetDBPointer(m_oCDBConnector);
@@ -187,16 +188,12 @@ void CDietPlannerDlg::OnBnClickedLoginBtn()
 	}
 	// TODO: Add your control notification handler code here
 }
-
-
 void CDietPlannerDlg::OnBnClickedCaloriesRadio()
 {
 	UpdateData(TRUE);
 	MacroEditDisable(false);
 	UpdateData(FALSE);
 }
-
-
 void CDietPlannerDlg::OnBnClickedMacroRadio()
 {
 	UpdateData(TRUE);
@@ -210,4 +207,63 @@ void CDietPlannerDlg::MacroEditDisable(bool bDisable)
 	m_oFatsControl.EnableWindow(bDisable);
 	m_oProteinsControl.EnableWindow(bDisable);
 	m_oTotalCalories.SetReadOnly(bDisable);
+}
+void CDietPlannerDlg::OnEnChangeProteinsEdit()
+{
+	UpdateData(TRUE);
+	m_oRecipie.SetProteins(m_dProteins);
+	m_oRecipie.CalculateCalories();
+	m_dTotalCalories = m_oRecipie.GetCalories();
+	UpdateData(FALSE);
+}
+
+
+void CDietPlannerDlg::OnEnChangeFatsEdit()
+{
+	UpdateData(TRUE);
+	m_oRecipie.SetFats(m_dFats);
+	m_oRecipie.CalculateCalories();
+	m_dTotalCalories = m_oRecipie.GetCalories();
+	UpdateData(FALSE);
+}
+void CDietPlannerDlg::OnEnChangeCarbsEdit()
+{
+	UpdateData(TRUE);
+	m_oRecipie.SetCarbs(m_dCarbs);
+	m_oRecipie.CalculateCalories();
+	m_dTotalCalories = m_oRecipie.GetCalories();
+	UpdateData(FALSE);
+}
+void CDietPlannerDlg::OnEnChangeTotalCalories()
+{
+	UpdateData(TRUE);
+	m_oRecipie.SetCalories(m_dTotalCalories);
+	UpdateData(FALSE);
+}
+
+
+void CDietPlannerDlg::OnBnClickedSaveBtn()
+{
+	UpdateData(TRUE);
+	if (m_oConnectionFlag.IsEmpty())
+	{
+		AfxMessageBox(_T("Connect to DB"));
+	}
+	else if(m_oRecipieNameString.IsEmpty() || m_dTotalCalories == 0 )
+	{
+		AfxMessageBox(_T("Fill Recipie info"));
+	}
+	else
+	{
+		AfxMessageBox(m_oCDBConnector.InsertIntoTable(&m_oRecipie));
+	}
+	UpdateData(FALSE);
+}
+
+
+void CDietPlannerDlg::OnEnChangeRecipieEdit()
+{
+	UpdateData(TRUE);
+	m_oRecipie.SetNameString(m_oRecipieNameString);
+	UpdateData(FALSE);
 }
