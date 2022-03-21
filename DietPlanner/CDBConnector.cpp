@@ -83,7 +83,9 @@ CString CDBConnector::SelectFromTable()
 CString CDBConnector::InsertIntoTable(CRecipie* oRecipie)
 {
 	CString oResultString;
-	CString oQuerryString = _T("INSERT into dietplanner.recipie_table(name , disscription, macro_protein,macro_carbs, macro_fats, prep_time) ");
+	CString oQuerryString = _T("INSERT into dietplanner.recipie_table(name ,\
+								 disscription, macro_protein,macro_carbs,\
+								 macro_fats, prep_time) ");
 	CString oQuerryValuesString; 
 	oQuerryValuesString.Format(_T("VALUES ('%s', '%s', %f, %f, %f, %f)"),
 					oRecipie->GetNameString(), 

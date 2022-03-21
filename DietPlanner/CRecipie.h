@@ -1,4 +1,5 @@
 #pragma once
+#include"CIngridient.h"
 class CRecipie
 {
 #pragma once
@@ -26,6 +27,8 @@ public:
 		//methodes
 		static double CalculateCalories(double dProteins, double dCarbs, double dFats);
 		void CalculateCalories();
+		void AddIngridient(CIngridient oIngridient);
+		void AddIngridient(CString oIngridientName, CString oUnitName, double dQuantity);
 private:
 		CString m_oNameString;
 		CString m_oDescriptionString;
@@ -33,6 +36,6 @@ private:
 		double m_dFats;
 		double m_dCarbs;
 		double m_dCalories;
-
+		CList<CIngridient, CIngridient &> m_oIngridientsList;
 };
 

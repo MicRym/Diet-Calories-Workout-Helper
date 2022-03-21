@@ -188,7 +188,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="CDBConnector.h" />
+    <ClInclude Include="CIngridient.h" />
+    <ClInclude Include="CIngridientsDlg.h" />
     <ClInclude Include="CLoginDialog.h" />
+    <ClInclude Include="CQuantity.h" />
     <ClInclude Include="CRecipie.h" />
     <ClInclude Include="DietPlanner.h" />
     <ClInclude Include="DietPlannerDlg.h" />
@@ -199,7 +202,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CDBConnector.cpp" />
+    <ClCompile Include="CIngridient.cpp" />
+    <ClCompile Include="CIngridientsDlg.cpp" />
     <ClCompile Include="CLoginDialog.cpp" />
+    <ClCompile Include="CQuantity.cpp" />
     <ClCompile Include="CRecipie.cpp" />
     <ClCompile Include="DietPlanner.cpp" />
     <ClCompile Include="DietPlannerDlg.cpp" />

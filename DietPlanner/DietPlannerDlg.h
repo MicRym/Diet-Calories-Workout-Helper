@@ -66,4 +66,5 @@ private:
 public:
 	CString m_oRecipieNameString;
 	afx_msg void OnEnChangeRecipieEdit();
+	afx_msg void OnBnClickedIngridientsBtn();
 };

@@ -6,6 +6,7 @@
 #include "DietPlanner.h"
 #include "DietPlannerDlg.h"
 #include "afxdialogex.h"
+#include "CIngridientsDlg.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -96,6 +97,7 @@ BEGIN_MESSAGE_MAP(CDietPlannerDlg, CDialogEx)
 	ON_EN_CHANGE(IDC_TOTAL_CALORIES, &CDietPlannerDlg::OnEnChangeTotalCalories)
 	ON_BN_CLICKED(IDC_SAVE_BTN, &CDietPlannerDlg::OnBnClickedSaveBtn)
 	ON_EN_CHANGE(IDC_RECIPIE_EDIT, &CDietPlannerDlg::OnEnChangeRecipieEdit)
+	ON_BN_CLICKED(IDC_INGRIDIENTS_BTN, &CDietPlannerDlg::OnBnClickedIngridientsBtn)
 END_MESSAGE_MAP()
 
 
@@ -266,4 +268,14 @@ void CDietPlannerDlg::OnEnChangeRecipieEdit()
 	UpdateData(TRUE);
 	m_oRecipie.SetNameString(m_oRecipieNameString);
 	UpdateData(FALSE);
+}
+
+
+void CDietPlannerDlg::OnBnClickedIngridientsBtn()
+{
+	CIngridientsDlg oIngridientMenager;
+	if (oIngridientMenager.DoModal() == IDOK)
+	{
+
+	}
 }

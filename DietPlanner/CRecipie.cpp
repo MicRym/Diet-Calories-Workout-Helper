@@ -107,3 +107,15 @@ void CRecipie::CalculateCalories()
     m_dCalories = (m_dProteins * 4.0f) + (m_dCarbs * 4.0f) + (m_dFats * 9.0f);
 }
 
+void CRecipie::AddIngridient(CIngridient oIngridient)
+{
+    m_oIngridientsList.AddHead(oIngridient);
+}
+
+void CRecipie::AddIngridient(CString oIngridientName, CString oUnitName, double dQuantity)
+{
+    m_oIngridientsList.AddHead(CIngridient(oIngridientName,
+                                            oUnitName,
+                                            dQuantity));
+}
+
