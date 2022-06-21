@@ -1,5 +1,5 @@
 #pragma once
-
+#include "CIngridient.h"
 
 // CIngridientsDlg dialog
 
@@ -23,5 +23,10 @@ protected:
 
 	DECLARE_MESSAGE_MAP()
 private:
+	CList<CIngridient> m_oIngridientList;
 	CListCtrl m_oIngridientsListControl;
+	void PopulateListCtrl();
+public:
+	afx_msg void OnBnClickedAddStepBtn();
+	afx_msg void OnBnClickedDelBtn();
 };

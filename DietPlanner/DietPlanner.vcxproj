@@ -189,6 +189,7 @@
   <ItemGroup>
     <ClInclude Include="CDBConnector.h" />
     <ClInclude Include="CIngridient.h" />
+    <ClInclude Include="CIngridientAddDlg.h" />
     <ClInclude Include="CIngridientsDlg.h" />
     <ClInclude Include="CLoginDialog.h" />
     <ClInclude Include="CQuantity.h" />
@@ -203,6 +204,7 @@
   <ItemGroup>
     <ClCompile Include="CDBConnector.cpp" />
     <ClCompile Include="CIngridient.cpp" />
+    <ClCompile Include="CIngridientAddDlg.cpp" />
     <ClCompile Include="CIngridientsDlg.cpp" />
     <ClCompile Include="CLoginDialog.cpp" />
     <ClCompile Include="CQuantity.cpp" />
