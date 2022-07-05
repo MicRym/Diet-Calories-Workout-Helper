@@ -58,6 +58,7 @@ CDietPlannerDlg::CDietPlannerDlg(CWnd* pParent /*=nullptr*/)
 	, m_dTotalCalories(0)
 	, m_iOption(0)
 	, m_oRecipieNameString(_T(""))
+	, m_oIngrListEdit(_T(""))
 {
 	m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
 }
@@ -82,6 +83,8 @@ void CDietPlannerDlg::DoDataExchange(CDataExchange* pDX)
 	DDV_MinMaxInt(pDX, m_iOption, -1, 1);
 	DDX_Control(pDX, IDC_RECIPIE_EDIT, m_oRecipieEdit);
 	DDX_Text(pDX, IDC_RECIPIE_EDIT, m_oRecipieNameString);
+	DDX_Text(pDX, IDC_INGR_LIST_EDIT, m_oIngrListEdit);
+	DDX_Control(pDX, IDC_INGR_LIST_EDIT, m_oIGListEdit);
 }
 
 BEGIN_MESSAGE_MAP(CDietPlannerDlg, CDialogEx)
@@ -273,9 +276,20 @@ void CDietPlannerDlg::OnEnChangeRecipieEdit()
 
 void CDietPlannerDlg::OnBnClickedIngridientsBtn()
 {
-	CIngridientsDlg oIngridientMenager;
+	CIngridientsDlg oIngridientMenager(m_oIngridientList);
+	CString oTextToAdd;
 	if (oIngridientMenager.DoModal() == IDOK)
 	{
+		m_oIngrListEdit.Empty();
+		for (POSITION pos = m_oIngridientList.GetHeadPosition(); pos;)
+		{
+			CIngridient oIngridient = m_oIngridientList.GetNext(pos);
+			oTextToAdd+= oIngridient.GetIngridientNameString();
+			oTextToAdd += (" ");
+			oTextToAdd += oIngridient.GetQuantityWithUnit();
+			oTextToAdd+=(_T("\r\n"));
 
+		}
+		m_oIGListEdit.SetWindowText(oTextToAdd);
 	}
 }

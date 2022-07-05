@@ -51,8 +51,6 @@ END_MESSAGE_MAP()
 void CIngridientAddDlg::OnBnClickedOk()
 {
 	UpdateData(TRUE);
-	m_oIngridient->SetNameString(m_oIgNameString);
-	m_oIngridient->SetQuantity(m_oUnitString, m_dIgQunty);
 	if (m_oIgNameString.IsEmpty() ||
 		m_dIgQunty == 0 ||
 		m_oUnitString.IsEmpty())
@@ -61,6 +59,8 @@ void CIngridientAddDlg::OnBnClickedOk()
 	}
 	else
 	{
+		m_oIngridient->SetNameString(m_oIgNameString);
+		m_oIngridient->SetQuantity(m_oUnitString, m_dIgQunty);
 		CDialogEx::OnOK();
 	}
 	

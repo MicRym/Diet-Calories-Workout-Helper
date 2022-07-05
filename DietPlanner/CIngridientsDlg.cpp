@@ -16,11 +16,18 @@ IMPLEMENT_DYNAMIC(CIngridientsDlg, CDialogEx)
 CIngridientsDlg::CIngridientsDlg(CWnd* pParent /*=nullptr*/)
 	: CDialogEx(IDD_INGRIDIENTS_DIALOG, pParent)
 {
+	m_oIngridientList = nullptr;
+}
 
+CIngridientsDlg::CIngridientsDlg(CList<CIngridient>& oIngridientList, CWnd* pParent /*=nullptr*/)
+	: CDialogEx(IDD_INGRIDIENTS_DIALOG, pParent)
+{
+	m_oIngridientList = &oIngridientList;
 }
 
 CIngridientsDlg::~CIngridientsDlg()
 {
+	m_oIngridientList = nullptr;
 }
 
 void CIngridientsDlg::DoDataExchange(CDataExchange* pDX)
@@ -43,6 +50,7 @@ BOOL CIngridientsDlg::OnInitDialog()
 	m_oIngridientsListControl.InsertColumn(1, L"Ingridient Names", LVCFMT_LEFT, 100);
 	m_oIngridientsListControl.InsertColumn(2, L"Quantity", LVCFMT_LEFT, 60);
 	m_oIngridientsListControl.SendMessage(LVM_SETEXTENDEDLISTVIEWSTYLE, 0, LVS_EX_FULLROWSELECT);
+	PopulateListCtrl();
 	return TRUE;
 }
 
@@ -50,12 +58,12 @@ BOOL CIngridientsDlg::OnInitDialog()
 void CIngridientsDlg::PopulateListCtrl()
 {
 	int iCount = 0;
-	iCount = m_oIngridientList.GetCount();
-	POSITION oPosition = m_oIngridientList.GetHeadPosition();
+	iCount = m_oIngridientList->GetCount();
+	POSITION oPosition = m_oIngridientList->GetHeadPosition();
 	
 	for (int iIndex = 0; iIndex < iCount; iIndex++)
 	{
-		CIngridient oIngridientToAdd = m_oIngridientList.GetNext(oPosition);
+		CIngridient oIngridientToAdd = m_oIngridientList->GetNext(oPosition);
 		CString oText;
 		oText.Format(_T("%d"), iIndex);
 		m_oIngridientsListControl.InsertItem(iIndex, oText);
@@ -76,7 +84,7 @@ void CIngridientsDlg::OnBnClickedAddStepBtn()
 	{
 		CString oText;
 		oText.Format(_T("%d"), iIndex);
-		m_oIngridientList.AddTail(oIngridientToAdd);
+		m_oIngridientList->AddTail(oIngridientToAdd);
 		m_oIngridientsListControl.InsertItem(iIndex, oText);
 		m_oIngridientsListControl.SetItemText(iIndex, 1, oIngridientToAdd.GetIngridientNameString());
 		m_oIngridientsListControl.SetItemText(iIndex, 2, oIngridientToAdd.GetQuantityWithUnit());
@@ -92,10 +100,18 @@ void CIngridientsDlg::OnBnClickedDelBtn()
 	iCurrentSelection = m_oIngridientsListControl.GetSelectionMark();
 	if (iCurrentSelection != -1)
 	{
-		m_oIngridientList.RemoveAt(m_oIngridientList.FindIndex(iCurrentSelection));
+		m_oIngridientList->RemoveAt(m_oIngridientList->FindIndex(iCurrentSelection));
 		m_oIngridientsListControl.DeleteAllItems();
 		PopulateListCtrl();
 	}
 	UpdateData(FALSE);
 	// TODO: Add your control notification handler code here
+}
+
+void CIngridientsDlg::GetIngridientList(CList<CIngridient>& ooDest)
+{
+	for (POSITION pos = m_oIngridientList->GetHeadPosition(); pos;)
+	{
+		ooDest.AddTail(m_oIngridientList->GetNext(pos));
+	}
 }

@@ -24,6 +24,7 @@ private:
 	CDBConnector m_oCDBConnector;
 	CLoginDialog m_oLoginDialog;
 	CString m_oConnectionFlag;
+	CList<CIngridient> m_oIngridientList;
 
 // Implementation
 protected:
@@ -67,4 +68,8 @@ public:
 	CString m_oRecipieNameString;
 	afx_msg void OnEnChangeRecipieEdit();
 	afx_msg void OnBnClickedIngridientsBtn();
+private:
+	CString m_oIngrListEdit;
+	CListCtrl m_oIGListCtrl;
+	CEdit m_oIGListEdit;
 };
