@@ -24,7 +24,6 @@ private:
 	CDBConnector m_oCDBConnector;
 	CLoginDialog m_oLoginDialog;
 	CString m_oConnectionFlag;
-	CList<CIngridient> m_oIngridientList;
 
 // Implementation
 protected:
@@ -72,4 +71,6 @@ private:
 	CString m_oIngrListEdit;
 	CListCtrl m_oIGListCtrl;
 	CEdit m_oIGListEdit;
+public:
+	afx_msg void OnBnClickedStepsBtn();
 };

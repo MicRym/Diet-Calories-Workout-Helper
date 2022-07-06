@@ -101,6 +101,7 @@ BEGIN_MESSAGE_MAP(CDietPlannerDlg, CDialogEx)
 	ON_BN_CLICKED(IDC_SAVE_BTN, &CDietPlannerDlg::OnBnClickedSaveBtn)
 	ON_EN_CHANGE(IDC_RECIPIE_EDIT, &CDietPlannerDlg::OnEnChangeRecipieEdit)
 	ON_BN_CLICKED(IDC_INGRIDIENTS_BTN, &CDietPlannerDlg::OnBnClickedIngridientsBtn)
+	ON_BN_CLICKED(IDC_STEPS_BTN, &CDietPlannerDlg::OnBnClickedStepsBtn)
 END_MESSAGE_MAP()
 
 
@@ -276,14 +277,15 @@ void CDietPlannerDlg::OnEnChangeRecipieEdit()
 
 void CDietPlannerDlg::OnBnClickedIngridientsBtn()
 {
-	CIngridientsDlg oIngridientMenager(m_oIngridientList);
+	CList<CIngridient> *pIngridientList = m_oRecipie.GetListPtr();
+	CIngridientsDlg oIngridientMenager(*pIngridientList);
 	CString oTextToAdd;
 	if (oIngridientMenager.DoModal() == IDOK)
 	{
 		m_oIngrListEdit.Empty();
-		for (POSITION pos = m_oIngridientList.GetHeadPosition(); pos;)
+		for (POSITION pos = pIngridientList->GetHeadPosition(); pos;)
 		{
-			CIngridient oIngridient = m_oIngridientList.GetNext(pos);
+			CIngridient oIngridient = pIngridientList->GetNext(pos);
 			oTextToAdd+= oIngridient.GetIngridientNameString();
 			oTextToAdd += (" ");
 			oTextToAdd += oIngridient.GetQuantityWithUnit();
@@ -292,4 +294,10 @@ void CDietPlannerDlg::OnBnClickedIngridientsBtn()
 		}
 		m_oIGListEdit.SetWindowText(oTextToAdd);
 	}
+}
+
+
+void CDietPlannerDlg::OnBnClickedStepsBtn()
+{
+	
 }

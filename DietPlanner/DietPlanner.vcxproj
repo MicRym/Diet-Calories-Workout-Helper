@@ -194,6 +194,7 @@
     <ClInclude Include="CLoginDialog.h" />
     <ClInclude Include="CQuantity.h" />
     <ClInclude Include="CRecipie.h" />
+    <ClInclude Include="CStepsDialog.h" />
     <ClInclude Include="DietPlanner.h" />
     <ClInclude Include="DietPlannerDlg.h" />
     <ClInclude Include="framework.h" />
@@ -209,6 +210,7 @@
     <ClCompile Include="CLoginDialog.cpp" />
     <ClCompile Include="CQuantity.cpp" />
     <ClCompile Include="CRecipie.cpp" />
+    <ClCompile Include="CStepsDialog.cpp" />
     <ClCompile Include="DietPlanner.cpp" />
     <ClCompile Include="DietPlannerDlg.cpp" />
     <ClCompile Include="pch.cpp">

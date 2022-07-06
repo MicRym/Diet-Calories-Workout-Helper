@@ -14,6 +14,9 @@ public:
 		double	GetCarbs();
 		CString GetCarbsString();
 		double	GetCalories();
+		CList<CIngridient>* GetListPtr();
+		CStringList* GetStepsListPtr();
+
 		//setters
 		void SetNameString(CString oNameString);
 		void SetDescriptionString(CString oDescriptionString);
@@ -36,6 +39,7 @@ private:
 		double m_dFats;
 		double m_dCarbs;
 		double m_dCalories;
-		CList<CIngridient, CIngridient &> m_oIngridientsList;
+		CList<CIngridient> m_oIngridientsList;
+		CStringList m_oStepsStringLis;
 };
 

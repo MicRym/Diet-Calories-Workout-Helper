@@ -52,6 +52,16 @@ double CRecipie::GetCalories()
     return m_dCalories;
 }
 
+CList<CIngridient>* CRecipie::GetListPtr()
+{
+    return &m_oIngridientsList;
+}
+
+CStringList* CRecipie::GetStepsListPtr()
+{
+    return &m_oStepsStringLis;
+}
+
 void CRecipie::SetNameString(CString oNameString)
 {
     m_oNameString = oNameString;

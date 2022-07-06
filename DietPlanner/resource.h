@@ -10,6 +10,7 @@
 #define IDD_LOGIN_DIALOG                129
 #define IDD_INGRIDIENTS_DIALOG          132
 #define IDD_ADD_INGRIDIENT_DIALOG       134
+#define IDD_STEPS_DIALOG                137
 #define IDC_LOGIN_EDIT                  1000
 #define IDC_EDIT2                       1001
 #define IDC_PASSWORD_EDIT               1001
@@ -35,14 +36,21 @@
 #define IDC_IG_QUANTY_EDIT              1023
 #define IDC_UNIT_COMBO                  1024
 #define IDC_INGR_LIST_EDIT              1026
+#define IDC_BUTTON1                     1030
+#define IDC_BUTTON2                     1031
+#define IDC_BUTTON5                     1032
+#define IDC_EDIT1                       1033
+#define IDC_STEP_NUMBER                 1034
+#define IDC_BUTTON3                     1035
+#define IDC_BUTTON4                     1036
 
 // Next default values for new objects
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        137
+#define _APS_NEXT_RESOURCE_VALUE        139
 #define _APS_NEXT_COMMAND_VALUE         32771
-#define _APS_NEXT_CONTROL_VALUE         1029
+#define _APS_NEXT_CONTROL_VALUE         1037
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif
