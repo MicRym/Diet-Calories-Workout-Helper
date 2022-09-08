@@ -1,0 +1,16 @@
+﻿<?xml version="1.0"?>
+<Recipies>
+	<Recpie>
+		<Name></Name>
+		<AdditionalInfo></AdditionalInfo>
+		<PreparationTime></PreparationTime>
+		<Macros>
+			<Proteins></Proteins>
+			<Carbs></Carbs>
+			<Fats></Fats>
+			<Kcal></Kcal>
+		</Macros>
+		<Ingridients></Ingridients>
+		<Steps></Steps>
+	</Recpie>
+</Recipies>

@@ -1,0 +1,8 @@
+<Recipies>
+    <Recipie Name="testowy"/>
+    <Macros>
+        <Proteins>0</Proteins>
+        <Carbs>0</Carbs>
+        <Fats>0</Fats>
+    </Macros>
+</Recipies>

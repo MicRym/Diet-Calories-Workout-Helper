@@ -1,0 +1,10 @@
+﻿<?xml version="1.0"?>
+<Day>
+	<Recipie></Recipie>
+	<Sums>
+		<ProteinsSum></ProteinsSum>
+		<CarbsSum></CarbsSum>
+		<FatsSum></FatsSum>
+		<KcalSum></KcalSum>
+	</Sums>
+</Day>

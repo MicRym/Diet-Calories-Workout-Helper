@@ -6,6 +6,7 @@
 #include "CLoginDialog.h"
 #include "CDBConnector.h"
 #include "CRecipie.h"
+#include "tinyxml2.h"
 // CDietPlannerDlg dialog
 class CDietPlannerDlg : public CDialogEx
 {
@@ -71,6 +72,7 @@ private:
 	CString m_oIngrListEdit;
 	CListCtrl m_oIGListCtrl;
 	CEdit m_oIGListEdit;
+	tinyxml2::XMLDocument m_oXMLDocument;
 public:
 	afx_msg void OnBnClickedStepsBtn();
 };

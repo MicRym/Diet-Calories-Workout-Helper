@@ -1,5 +1,6 @@
 #pragma once
 #include "CIngridient.h"
+#include "CAutomaticSortedList.h"
 
 // CIngridientsDlg dialog
 

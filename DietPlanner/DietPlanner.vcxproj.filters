@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="XML Templates">
+      <UniqueIdentifier>{81fe6b20-8e2c-4a69-8c48-a5c5b6b54e6c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DietPlanner.h">
@@ -57,6 +60,12 @@
     <ClInclude Include="CStepsDialog.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CAutomaticSortedList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tinyxml2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DietPlanner.cpp">
@@ -92,6 +101,12 @@
     <ClCompile Include="CStepsDialog.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CAutomaticSortedList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tinyxml2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="DietPlanner.rc">
@@ -108,5 +123,13 @@
     <Image Include="res\DietPlanner.ico">
       <Filter>Resource Files</Filter>
     </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="Day.xml">
+      <Filter>XML Templates</Filter>
+    </Xml>
+    <Xml Include="Recipies.xml">
+      <Filter>XML Templates</Filter>
+    </Xml>
   </ItemGroup>
 </Project>

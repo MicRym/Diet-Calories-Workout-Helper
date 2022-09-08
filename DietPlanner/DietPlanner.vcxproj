@@ -165,7 +165,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>STATIC_CONCPP;_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>C:\Program Files\MySQL\Connector C++ 8.0\include\jdbc;C:\Program Files\MySQL\MySQL Router 8.0\lib;C:\Program Files\MySQL\MySQL Server 8.0\lib;C:\Program Files\MySQL\Connector C++ 8.0\include;C:\Program Files\MySQL\Connector C++ 8.0\lib64\vs14;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\micha\source\repos\MicRym\Diet-Calories-Workout-Helper\DietPlanner\tinyxml2-master;C:\Program Files\MySQL\Connector C++ 8.0\include\jdbc;C:\Program Files\MySQL\MySQL Router 8.0\lib;C:\Program Files\MySQL\MySQL Server 8.0\lib;C:\Program Files\MySQL\Connector C++ 8.0\include;C:\Program Files\MySQL\Connector C++ 8.0\lib64\vs14;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
@@ -187,6 +187,7 @@
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="CAutomaticSortedList.h" />
     <ClInclude Include="CDBConnector.h" />
     <ClInclude Include="CIngridient.h" />
     <ClInclude Include="CIngridientAddDlg.h" />
@@ -201,8 +202,10 @@
     <ClInclude Include="pch.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="tinyxml2.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CAutomaticSortedList.cpp" />
     <ClCompile Include="CDBConnector.cpp" />
     <ClCompile Include="CIngridient.cpp" />
     <ClCompile Include="CIngridientAddDlg.cpp" />
@@ -219,6 +222,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="tinyxml2.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="DietPlanner.rc" />
@@ -229,6 +233,10 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="res\DietPlanner.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="Day.xml" />
+    <Xml Include="Recipies.xml" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

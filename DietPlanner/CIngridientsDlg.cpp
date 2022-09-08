@@ -7,6 +7,7 @@
 #include "afxdialogex.h"
 #include "CIngridient.h"
 #include "CIngridientAddDlg.h"
+#include "CAutomaticSortedList.h"
 
 
 // CIngridientsDlg dialog
@@ -60,7 +61,20 @@ void CIngridientsDlg::PopulateListCtrl()
 	int iCount = 0;
 	iCount = m_oIngridientList->GetCount();
 	POSITION oPosition = m_oIngridientList->GetHeadPosition();
-	
+	CAutomaticSortedList oList;
+	oList.SortList(_T("kot"));
+	oList.SortList(_T("gruszka"));
+	oList.SortList(_T("mogi³a"));
+	oList.SortList(_T("jod³a"));
+	oList.SortList(_T("eeeee"));
+	oList.SortList(_T("dracena"));
+	oList.SortList(_T("s³uchawki"));
+	oList.SortList(_T("piecz¹tka"));
+	oList.SortList(_T("flaga"));
+	oList.SortList(_T("klocki"));
+	oList.SortList(_T("i"));
+	oList;
+
 	for (int iIndex = 0; iIndex < iCount; iIndex++)
 	{
 		CIngridient oIngridientToAdd = m_oIngridientList->GetNext(oPosition);

@@ -7,6 +7,7 @@
 #include "DietPlannerDlg.h"
 #include "afxdialogex.h"
 #include "CIngridientsDlg.h"
+#include "tinyxml2.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -254,6 +255,31 @@ void CDietPlannerDlg::OnBnClickedSaveBtn()
 	if (m_oConnectionFlag.IsEmpty())
 	{
 		AfxMessageBox(_T("Connect to DB"));
+
+		tinyxml2::XMLElement* oRecepiesElement = m_oXMLDocument.NewElement("Recipies");
+		m_oXMLDocument.InsertFirstChild(oRecepiesElement);
+
+		tinyxml2::XMLElement* oRecepieElement = m_oXMLDocument.NewElement("Recipie");
+		oRecepieElement->SetAttribute("Name", (CStringA)m_oRecipie.GetNameString());
+
+		oRecepiesElement->InsertFirstChild(oRecepieElement);
+
+		tinyxml2::XMLElement* oMacrosElement = m_oXMLDocument.NewElement("Macros");
+		oRecepiesElement->InsertEndChild(oMacrosElement);
+
+		tinyxml2::XMLElement* oProteinsElement = m_oXMLDocument.NewElement("Proteins");
+		oProteinsElement->SetText(m_oRecipie.GetProteins());
+		oMacrosElement->InsertEndChild(oProteinsElement);
+
+		tinyxml2::XMLElement* oCarbsElement = m_oXMLDocument.NewElement("Carbs");
+		oCarbsElement->SetText(m_oRecipie.GetCarbs());
+		oMacrosElement->InsertEndChild(oCarbsElement);
+
+		tinyxml2::XMLElement* oFatsElement = m_oXMLDocument.NewElement("Fats");
+		oFatsElement->SetText(m_oRecipie.GetFats());
+		oMacrosElement->InsertEndChild(oFatsElement);
+
+		m_oXMLDocument.SaveFile("test.xml");
 	}
 	else if(m_oRecipieNameString.IsEmpty() || m_dTotalCalories == 0 )
 	{
